@@ -33,31 +33,32 @@ const create = async (acObj) => new Promise((resolve, reject) => {
 });
 
 
-const getDetail = async (where, limit) => new Promise((resolve, reject) => {
-    limit = limit || 10;
-    where = where || {};
-    Order.aggregate([
-        { $match: where },
-        {
-            $lookup: {
-                from: 'users',
-                localField: 'user_id',
-                foreignField: '_id',
-                as: 'users'
+const getDetail = async (where, limit) =>
+    new Promise((resolve, reject) => {
+        limit = limit || 10;
+        where = where || {};
+        Order.aggregate([
+            { $match: where },
+            {
+                $lookup: {
+                    from: 'users',
+                    localField: 'user_id',
+                    foreignField: '_id',
+                    as: 'users'
+                }
+            },
+            {
+                $project: {
+                    user_id: 1,
+                    menu_items: 1,
+                    amount: 1,
+                    user_name: { $arrayElemAt: ['$users.name', 0] },
+                    user_email: { $arrayElemAt: ['$users.email', 0] },
+                }
             }
-        },
-        {
-            $project: {
-                user_id: 1,
-                menu_items: 1,
-                amount: 1,
-                user_name: { $arrayElemAt: ['$users.name', 0] },
-                user_email: { $arrayElemAt: ['$users.email', 0] },
-            }
-        }
-    ])
-        .exec((err, doc) => (err ? reject(err) : resolve(doc)));
-});
+        ])
+            .exec((err, doc) => (err ? reject(err) : resolve(doc)));
+    });
 
 
 module.exports = {
