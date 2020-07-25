@@ -38,7 +38,12 @@ const initPayment = async (req, res) => {
             });
 
             if (paymentIntent) {
+                errMsg = "success";
+                errCode = 0;
                 res.send(baseController.generateResponse(errCode, errMsg, { payment_intent: paymentIntent }));
+            }
+            else {
+                res.send(baseController.generateResponse(errCode, errMsg));
             }
 
         } else {
