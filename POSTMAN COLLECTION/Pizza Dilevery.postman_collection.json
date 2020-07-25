@@ -351,6 +351,40 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "localhost:8001/email/send",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMWM0YWRmZmJjMWI3MTMwOGM4NGI1NyIsImp0aSI6IlN5RkNlUFk2T1QiLCJpYXQiOjE1OTU2ODk2OTUsImV4cCI6MTU5NTg2MjQ5NSwiYXVkIjoiVXNlcnMiLCJpc3MiOiJLdWJlciBVc2VyIiwic3ViIjoiVmFsaWRhdGUgdXNlciJ9.HwEwbGHNC3kxeVTbK7Cr424nxmnfqV7PiGSuVMvp6wlA-x-ELoz7zRme52kuC4xfbrzfjZLTyEFJtQzTSRh2Zg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_id\":\"5f1c6f07b32e1d4e54def16e\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8001/email/send",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"email",
+						"send"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
