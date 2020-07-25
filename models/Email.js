@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 var emailSchema = new Schema({
 
     user_id: Schema.Types.ObjectId,
+    email_id: String,
     gateway: {
         type: String,
         default: "mailgun"
