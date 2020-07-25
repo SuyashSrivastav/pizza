@@ -1,5 +1,5 @@
 var api_key = require("../config/apikey").api_key
-var domain = 'sandbox47bdcf383d7a457a9394534bfe2554d5.mailgun.org';
+var domain = require("../config/domain").domain;
 var mailgun = require('mailgun-js')({ apiKey: api_key, domain: domain });
 
 const baseController = require("./BaseController");
