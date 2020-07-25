@@ -1,5 +1,5 @@
 
-const api_key = '6125acb4bd0fe4728dabe047e9b38563-ffefc4e4-4c42c01e'
+const api_key = 'key-4574ab61a955af48192a070dc0a8fa23'
 
 module.exports = {
     api_key
