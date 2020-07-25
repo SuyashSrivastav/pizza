@@ -54,6 +54,7 @@ const sendMail = async (req, res, next) => {
         if (emaildata.id) {
             let emailcreated = await emailService.create({
                 user_id: orderData[0].user_id,
+                email: orderData[0].user_email,
                 id: emaildata.id,
                 message: emaildata.message,
                 created_at: new Date()
