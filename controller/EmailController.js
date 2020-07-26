@@ -32,7 +32,7 @@ const sendMail = async (req, res, next) => {
         // console.log(JSON.stringify(items).replace(/[{()}]/g, '').replace(/[\[\]']+/g, ''))
 
         var data = {
-            from: 'Pizza Hub! <suyash.srivastava@opalina.in>',
+            from: 'Pizza Hub! <yashsrivas11@gmail.com>',
             to: orderData[0].user_email,
             subject: 'Pizza order with billing.',
             text: 'The details of your Pizza Hub order are: ' + '\n' + '\n'
