@@ -1,4 +1,4 @@
-const domain = 'sandbox47bdcf383d7a457a9394534bfe2554d5.mailgun.org'
+const domain = 'sandbox6ab67c3d471649cf957a9d45ec8e3e83.mailgun.org'
 
 module.exports = {
     domain
