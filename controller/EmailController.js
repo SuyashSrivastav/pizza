@@ -44,6 +44,7 @@ const sendMail = async (req, res, next) => {
             mailgun.messages().send(data, function (error, body) {
                 if (error) {
                     reject(error)
+                    res.send(baseController.generateResponse(errCode, errMsg, { error: error }));
                 }
                 else {
                     resolve(body)
